@@ -1,0 +1,268 @@
+# HW Submission Checklist:
+1. Make sure README is completed
+2. Make sure you have comments
+3. Make sure lines are no longer than 80 characters
+4. Try to make sure that functions are no longer than the height of a computer screen
+5. Turn in code and README on Submitty
+6. Attach any additional files as needed (memory diagrams, additional test case files, etc.)
+
+# Lab 1
+cd ~/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab1/lab1/lab1
+g++ main.cpp time.cpp -o time_test.exe -Wall -Wextra
+./time_test.exe
+
+# HW 1
+cd ~/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw1/hw1/hw1
+g++ main.cpp -o main.out -Wall -Wextra
+./main.out gettysburg_address.txt output.txt 70 full_justify trap
+
+# Lab 2
+cd ~/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab2/time/time
+g++ main.cpp time.cpp -o time_test.exe -Wall -Wextra   
+./time_test.exe
+# No compile warnings/errors with const pass by value or reference without const (executing also worked in both cases - if doing const pass by value, incurring extra cost of copying prior to sorting)
+
+# HW 2
+cd ~/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw2/hw2/hw2
+g++ main.cpp player.cpp frame.cpp name.cpp -o bowling.out -Wall -Wextra
+./bowling.out example.txt results.txt standard
+
+# Lab 2
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab3/lab3/lab3
+g++ main.cpp line.cpp point.cpp -o executable.exe -Wall -Wextra
+./executable.exe input_a.txt
+# start lldb
+lldb executable.exe
+# set breakpoints
+breakpoint set --name main
+break set --name Point::get_x
+run input_a.txt
+next
+step
+finish
+print x1
+display x1
+backtrace
+
+# Test 1 Practice Problems
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/tests/test1-practice-problems/test1-practice-problems
+g++ -g main.cpp -o memory_debugging.out
+# if seeing weird errors it might be a bug with drmemory so try removing -brief flag
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -brief -- ./memory_debugging.out
+
+# Lecture 6 Practice
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/lectures/lecture6/lec6-code/lec6-code
+g++ -g main.cpp -o memory_debugging.out
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -brief -- ./memory_debugging.out
+
+# Lab 4
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab4/lab4/lab4
+g++ main.cpp -o buggy_lab4.out -g -Wall -Wextra
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -brief -- ./buggy_lab4.out
+./buggy_lab4.out
+
+# Checkpoint 3
+-g flag allows for line numbers to be shown in drmemory debugger output
+Instead of *(intArray + i), you can write intArray[i] to change from pointer to subscripting syntax
+Uninitialized read is when you try to read from a variable that hasn't been initialized (e.g. if int* p; and then you write cout << *p;)
+Unaddressable access is when you access an invalid memory address like when you go beyond the bounds of an array as an example.
+Invalid heap argument is when you incorrectly delete memory allocated on the heap. For example, if you create an array using new [] and you call delete without the [], you will get this error.
+A memory leak is when you allocate memory on the heap but do not call delete on it. For example, if you say int* x = new int; and you never say delete x; you will get this error.
+
+# HW 3
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw3/hw3/hw3
+g++ main.cpp -o main.out -g -Wall -Wextra
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out
+./main.out
+
+# Lab 5
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab5/lab5/lab5
+g++ main.cpp -o main.out -g -Wall -Wextra
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -brief -- ./main.out
+./main.out
+
+# HW 4
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw4/hw4
+g++ main.cpp preference.cpp customer.cpp inventory.cpp -o main.out -g -Wall -Wextra
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out requests.txt results.txt
+./main.out requests.txt results.txt
+
+# Lab 6
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab6/lab6/lab6
+g++ main.cpp -o main.out -g -Wall -Wextra
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out
+./main.out
+# drmemory output before fixing the bugs
+In file included from main.cpp:5:
+./dslist.hpp:142:37: warning: unused parameter 'v' [-Wunused-parameter]
+void dslist<T>::push_front(const T& v) {
+                                    ^
+1 warning generated.
+(base) nuthatch-63:lab6 adityabehal$ ~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out
+~~Dr.M~~ Dr. Memory version 2.3.166
+~~Dr.M~~ WARNING: Dr. Memory for Mac is Beta software.  Please report any
+~~Dr.M~~ problems encountered to http://drmemory.org/issues.
+Elements =  0 1 1.41421 1.73205 2 2.23607 2.44949 2.64575 2.82843 3
+~~Dr.M~~ 
+~~Dr.M~~ Error #1: LEAK 24 direct bytes 0x00000001055fb1a0-0x00000001055fb1b8 + 216 indirect bytes
+~~Dr.M~~ # 0 replace_operator_new               [/Users/travis/build/DynamoRIO/drmemory/common/alloc_replace.c:2900]
+~~Dr.M~~ # 1 dslist<>::push_back                [./dslist.hpp:160]
+~~Dr.M~~ # 2 main                               [/Users/adityabehal/Documents/RPI/Freshman/Spring/Data Structures/labs/lab6/lab6/lab6/main.cpp:15]
+~~Dr.M~~ 
+~~Dr.M~~ ERRORS FOUND:
+~~Dr.M~~       0 unique,     0 total unaddressable access(es)
+~~Dr.M~~       0 unique,     0 total uninitialized access(es)
+~~Dr.M~~       0 unique,     0 total invalid heap argument(s)
+~~Dr.M~~       0 unique,     0 total warning(s)
+~~Dr.M~~       1 unique,     1 total,    240 byte(s) of leak(s)
+~~Dr.M~~       0 unique,     0 total,      0 byte(s) of possible leak(s)
+~~Dr.M~~ ERRORS IGNORED:
+~~Dr.M~~       4 unique,     4 total,   4244 byte(s) of still-reachable allocation(s)
+~~Dr.M~~          (re-run with "-show_reachable" for details)
+~~Dr.M~~ Details: /Users/adityabehal/DrMemory-MacOS-2.3.166/drmemory/logs/DrMemory-main.out.64665.000/results.txt
+
+# HW 5
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw5/hw5/hw5/
+g++ main.cpp -o main.out -g -Wall -Wextra
+./main.out
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out
+
+# HW 6
+# hw6 solution code testing
+cd /Users/adityabehal/Desktop/hw6-solution/
+g++ -std=c++11 main.cpp -o main.out -g -Wall -Wextra
+./main.out blackout_dict1.txt blackout1.txt all_solutions print_boards
+# hw6 my own code testing
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw6/hw6-fresh/hw6-fresh/
+g++ -std=c++11 main.cpp wordcombination.cpp wordsolution.cpp puzzle.cpp wordinput.cpp constraint.cpp -o main.out -g -Wall -Wextra
+./main.out blackout_dict1.txt blackout1.txt all_solutions print_boards
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out blackout_dict1.txt blackout1.txt all_solutions print_boards
+# currently hanging on massive test case (make sure it works for one_solution)
+./main.out sporcle1_dict4.txt sporcle1_constraintsA.txt all_solutions print_boards
+
+# HW 7
+# input and output (cout only) redirection example without using file streams
+program.exe < input.txt > output.txt
+# input and output (both cout and cerr) redirection example without using file streams
+program.exe < input.txt > output.txt 2> cerr_output.txt
+# hw7 own code testing
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw7/hw7/hw7/
+g++ -std=c++11 main.cpp people.cpp costume.cpp -o main.out -g -Wall -Wextra
+./main.out < small_input.txt > code_output.txt
+
+# HW 8
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw8/hw8/hw8/
+g++ -std=c++11 main.cpp -o main.out -g -Wall -Wextra
+./main.out output.txt
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out output.txt
+
+# HW 9
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw9/hw9/hw9/
+g++ -std=c++11 main.cpp -o main.out -g -Wall -Wextra
+./main.out < input_small.txt > code_output.txt
+./main.out extra_credit < input_small.txt > code_output.txt
+time ./main.out < input_small.txt > code_output.txt
+time ./main.out extra_credit < input_small.txt > code_output.txt
+
+# HW 10
+# navigate to directory with code
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/hw/hw10/hw10/
+# compile code
+clang++ -g -Wall -Wextra performance*.cpp -o perf.out
+
+# vector operation tests and verify accuracy
+# sort
+./perf.out vector sort string < small_string_input.txt > vec_out.txt 2> vec_stats.txt
+diff vec_out.txt small_string_output_sort.txt
+# remove duplicates
+./perf.out vector remove_duplicates string < small_string_input.txt > my_out.txt
+diff my_out.txt small_string_output_remove_duplicates.txt
+# mode
+./perf.out vector mode string < small_string_input.txt
+# closest pair of integers
+./perf.out vector closest_pair integer < small_integer_output_remove_duplicates.txt
+# first sorted
+./perf.out vector first_sorted string 3 < small_string_input.txt
+# longest substring
+./perf.out vector longest_substring string < small_string_output_remove_duplicates.txt
+
+
+# list operation tests and verify accuracy
+# sort
+./perf.out list sort string < small_string_input.txt > list_out.txt 2> list_stats.txt
+diff list_out.txt small_string_output_sort.txt
+# remove duplicates
+./perf.out list remove_duplicates string < small_string_input.txt > my_out.txt
+diff my_out.txt small_string_output_remove_duplicates.txt
+# mode
+./perf.out list mode string < small_string_input.txt
+# closest pair of integers
+./perf.out list closest_pair integer < small_integer_output_remove_duplicates.txt
+# first sorted
+./perf.out list first_sorted string 3 < small_string_input.txt
+# longest substring
+./perf.out list longest_substring string < small_string_output_remove_duplicates.txt
+
+# bst operation tests and verify accuracy
+# sort
+./perf.out bst sort string < small_string_input.txt > bst_out.txt 2> bst_stats.txt
+diff bst_out.txt small_string_output_sort.txt
+# remove duplicates
+./perf.out bst remove_duplicates string < small_string_input.txt > my_out.txt
+diff my_out.txt small_string_output_remove_duplicates.txt
+# mode
+./perf.out bst mode string < small_string_input.txt
+# closest pair of integers
+./perf.out bst closest_pair integer < small_integer_output_remove_duplicates.txt
+# first sorted
+./perf.out bst first_sorted string 3 < small_string_input.txt
+# longest substring
+./perf.out bst longest_substring string < small_string_output_remove_duplicates.txt
+
+# priority queue operation tests and verify accuracy
+# sort
+./perf.out priority_queue sort string < small_string_input.txt > pq_out.txt 2> pq_stats.txt
+diff pq_out.txt small_string_output_sort.txt
+# mode
+./perf.out priority_queue mode string < small_string_input.txt
+# closest pair of integers
+./perf.out priority_queue closest_pair integer < small_integer_output_remove_duplicates.txt
+# first sorted
+./perf.out list first_sorted string 3 < small_string_input.txt
+
+# hash table operation tests and verify accuracy
+# remove duplicates
+./perf.out hash_table remove_duplicates string < small_string_input.txt > my_out.txt
+diff my_out.txt small_string_output_remove_duplicates.txt
+# mode
+./perf.out hash_table mode string < small_string_input.txt
+# closest pair of integers
+./perf.out hash_table closest_pair integer < small_integer_output_remove_duplicates.txt
+# longest substring
+./perf.out hash_table longest_substring string < small_string_output_remove_duplicates.txt
+
+# cross verifying results 
+# vector and list sort results
+diff vec_out.txt list_out.txt
+
+/* medium_string_input.txt does not exist */
+./perf.out vector sort string < medium_string_input.txt > vec_out.txt 2> vec_stats.txt
+./perf.out list sort string < medium_string_input.txt > list_out.txt 2> list_stats.txt
+
+# lab 13
+cd /Users/adityabehal/Documents/RPI/Freshman/Spring/Data\ Structures/labs/lab13/lab13-checkpoints2and3/lab13-checkpoints2and3
+g++ -std=c++11 main.cpp -o main.out -g -Wall -Wextra
+~/DrMemory-MacOS-2.3.166/bin64/drmemory -- ./main.out
+./main.out
+
+
+
+
+
+
+
+
+
+
+
+

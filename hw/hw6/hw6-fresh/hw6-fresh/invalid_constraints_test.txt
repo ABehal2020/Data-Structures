@@ -1,0 +1,11 @@
+!InvalidConstraintsTest
+!AdityaBehal
++5
++5
++3
++4
+BOBXYR
+LWCTZU
+CATSXS
+YYLLMT
+NOBXWY

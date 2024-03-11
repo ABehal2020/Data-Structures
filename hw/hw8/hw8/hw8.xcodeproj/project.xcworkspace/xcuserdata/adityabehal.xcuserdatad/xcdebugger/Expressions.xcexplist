@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::splitLeafNode(BPlusTreeNode&lt;int&gt;*):BPlusTree.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "p">
+            </PersistentString>
+            <PersistentString
+               value = "root">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::find(int const&amp;, BPlusTreeNode&lt;int&gt;*) const:BPlusTree.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "key_value">
+            </PersistentString>
+            <PersistentString
+               value = "p-&gt;keys[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::splitLeafNode(BPlusTreeNode&lt;int&gt;*&amp;):BPlusTree.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "rightChild-&gt;children[i]-&gt;parent">
+            </PersistentString>
+            <PersistentString
+               value = "comparisonValue">
+            </PersistentString>
+            <PersistentString
+               value = "p-&gt;parent-&gt;keys[0]">
+            </PersistentString>
+            <PersistentString
+               value = "rightChild">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::insert(int const&amp;):BPlusTree.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "RealTreeTestNoPrint():main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "7 - i">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::insertHelper(int const&amp;, BPlusTreeNode&lt;int&gt;*):BPlusTree.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "p-&gt;keys[i]">
+            </PersistentString>
+            <PersistentString
+               value = "p-&gt;keys.size()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TemplateTest():main.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::insertHelper(int const&amp;, BPlusTreeNode&lt;int&gt;*&amp;):BPlusTree.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::insertAtNode(int const&amp;, BPlusTreeNode&lt;int&gt;*):BPlusTree.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "SmallTreeCopyTest():main.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "BPlusTree&lt;int&gt;::insertAtNode(int const&amp;, BPlusTreeNode&lt;int&gt;*, BPlusTreeNode&lt;int&gt;*):BPlusTree.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "source">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
